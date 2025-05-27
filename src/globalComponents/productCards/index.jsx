@@ -1,10 +1,10 @@
 import { Tooltip } from "antd";
-import { Link } from "react-router-dom";
-import { getStars } from "../../utils/generateRating";
-import { getDiscountedPrice } from "../../utils/getDiscountPrice";
 import { FaOpencart } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { IoShareSocialOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { getStars } from "../../utils/generateRating";
+import { getDiscountedPrice } from "../../utils/getDiscountPrice";
 
 const ProductCard = ({
   image,
@@ -17,11 +17,11 @@ const ProductCard = ({
 }) => {
   return (
     <>
-      <div className="relative group border border-transparent hover:border-black100 p-6 rounded-[10px]">
+      <div className="relative group border border-transparent hover:border-black100 p-6 rounded-[10px] w-[285px]">
         <div className=" w-full h-[214px] overflow-hidden rounded-[10px]">
           <img src={image} alt="p-image" className="w-full h-full" />
         </div>
- <div className="absolute top-[40%] left-2/4 -translate-x-2/4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all ease-linear duration-100">
+        <div className="absolute top-[40%] left-2/4 -translate-x-2/4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all ease-linear duration-100">
           <div className="flex items-center gap-x-3">
             <div className="w-[50px] h-[50px] cursor-pointer rounded-full bg-white border border-orange flex items-center justify-center text-orange hover:bg-orange hover:text-white">
               <FaOpencart />
@@ -34,7 +34,6 @@ const ProductCard = ({
             </div>
           </div>
         </div>
-
         {discount && (
           <div className="absolute top-2 right-5 w-fit py-1.5 px-5 bg-orange rounded-[5px]">
             <span className="text-white font-montserrat font-bold text-base">

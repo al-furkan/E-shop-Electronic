@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import Banner from "./Components/Banner";
 import SupportSection from "./Components/support";
 import FeaturedProducts from "./Components/featuredProducts";
+import Overview from './Components/OverView';
+import NewProducts from './Components/newProducts/index';
 
 const Home = () => {
    const { t } = useTranslation();
@@ -18,9 +20,11 @@ const Home = () => {
         <Banner />
         <SupportSection />
         <FeaturedProducts />
+        <Overview />
+        <NewProducts />
       </Container>
     </>
   );
 };
 
-export default Home;
+export default Home;  
