@@ -7,6 +7,11 @@ import SupportSection from "./Components/support";
 import FeaturedProducts from "./Components/featuredProducts";
 import Overview from './Components/OverView';
 import NewProducts from './Components/newProducts/index';
+import Springsale from "./Components/springsale";
+import FaqSection from "./Components/FAQ";
+import BestSeller from "./Components/bestseller";
+import TechTalks from "./Components/teachTalks";
+import Companies from "./Components/Companies";
 
 const Home = () => {
    const { t } = useTranslation();
@@ -22,6 +27,15 @@ const Home = () => {
         <FeaturedProducts />
         <Overview />
         <NewProducts />
+      </Container>
+      <Springsale />
+      <Container>
+        <BestSeller />
+      </Container>
+      <FaqSection />
+      <Container>
+        <TechTalks />
+        <Companies />
       </Container>
     </>
   );
