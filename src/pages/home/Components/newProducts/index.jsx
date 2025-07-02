@@ -18,15 +18,17 @@ const NewProducts = () => {
     <section className="mt-[80px]">
       <Container>
         <div className="relative">
-          <div className="flex items-center justify-between">
-            <h3 className="font-poppins text-[36px] font-semibold text-black01">
+          {/* Top Header Section */}
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+            <h3 className="font-poppins text-[28px] sm:text-[32px] lg:text-[36px] font-semibold text-black01">
               {t("New_Products")}
             </h3>
-            <div className="flex items-center gap-x-2 w-[50%] justify-end">
-              <span className="font-montserrat font-normal text-base">
+
+            <div className="flex items-center gap-x-2 w-full lg:w-[50%] justify-start lg:justify-end">
+              <span className="font-montserrat font-normal text-base whitespace-nowrap">
                 {t("Sort By:")}
               </span>
-              <div className="w-[30%]">
+              <div className="w-[70%] sm:w-[40%] md:w-[30%]">
                 <AllCategoryMenu
                   className="font-montserrat font-bold text-base text-orange cursor-pointer w-full flex justify-between items-center"
                   icons={true}
@@ -35,7 +37,9 @@ const NewProducts = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-5 gap-x-5 gap-y-10 mt-[30px]">
+
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 mt-[30px]">
           {FeaturedProductsData?.slice(0, initialData)?.map((product) => (
             <ProductCard
               key={product.id}
@@ -49,11 +53,13 @@ const NewProducts = () => {
             />
           ))}
         </div>
+
+        {/* Load More Button */}
         <div className="flex items-center justify-center mt-[50px]">
           {initialData < FeaturedProductsData?.length && (
             <Button
               onClick={loadMore}
-              className="!px-[40px] !h-11 !border !border-orange !font-montserrat !font-bold !text-base !text-orange"
+              className="!px-[40px] !h-11 !border !border-orange !font-montserrat !font-bold !text-base !text-orange hover:!bg-orange hover:!text-white transition-all duration-300"
             >
               {t("Load More")}
             </Button>

@@ -5,7 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { Logo } from "../../../assets/svg/Logo";
 import Container from "../../Container";
-import CustomDrawer from "../../Drawer.jsx";
+import CustomDrawer from "../../Drawer";
 import SocialsWithLang from "../topbar/SocialsWithLang";
 import NavListItems from "./NavListItems";
 

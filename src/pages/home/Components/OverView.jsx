@@ -6,16 +6,16 @@ const Overview = () => {
   return (
     <section className="mt-[80px]">
       <Container>
-        <div className="grid grid-cols-[auto_auto] gap-x-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <img
             src={overView01}
-            alt="over view"
-            className="w-full h-full object-cover"
+            alt="overview"
+            className="w-full h-full object-cover rounded-xl"
           />
           <img
             src={overView02}
-            alt="over view"
-            className="w-full h-full object-cover"
+            alt="overview"
+            className="w-full h-full object-cover rounded-xl"
           />
         </div>
       </Container>

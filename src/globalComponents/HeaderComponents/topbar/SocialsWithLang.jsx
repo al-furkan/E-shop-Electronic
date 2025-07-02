@@ -58,7 +58,7 @@ const SocialsWithLang = () => {
 
   return (
     <>
-    <div  className="flex items-center w-full gap-x-5 justify-end">
+    <div  className="flex items-center w-full gap-x-5 justify-end cu-width">
         <div>
         <Select
           defaultValue={currencyOptions[0].value}
@@ -79,7 +79,7 @@ const SocialsWithLang = () => {
         />
       </div>
       <div className="w-[1px] h-[32px] bg-black100"></div>
-       <div className="flex items-center gap-x-4">
+       <div className="flex items-center gap-x-4 socialink">
         <Link to="facebook.com">
           <FaFacebookF color="#303030" />
         </Link>

@@ -35,30 +35,48 @@ const FeaturedProducts = () => {
           <div className="absolute top-2/4 -translate-y-2/4 -left-5 z-30 swiper-button-prev">
             <PrevButton />
           </div>
-          <Swiper
-            spaceBetween={50}
-            slidesPerView={5}
-            modules={[Navigation]}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-          >
-            {FeaturedProductsData?.map((product) => (
-              <SwiperSlide>
-                <ProductCard
-                  key={product.id}
-                  image={product?.image}
-                  ratings={product.ratings}
-                  pCategory={product.pCategory}
-                  pName={product.pName}
-                  totalRatings={product.totalRatings}
-                  price={product.price}
-                  discount={product.discount}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <Swiper
+  spaceBetween={20}
+  slidesPerView={1}
+  modules={[Navigation]}
+  navigation={{
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  }}
+  breakpoints={{
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+    1280: {
+      slidesPerView: 5,
+      spaceBetween: 50,
+    },
+  }}
+>
+  {FeaturedProductsData?.map((product) => (
+    <SwiperSlide key={product.id}>
+      <ProductCard
+        image={product?.image}
+        ratings={product.ratings}
+        pCategory={product.pCategory}
+        pName={product.pName}
+        totalRatings={product.totalRatings}
+        price={product.price}
+        discount={product.discount}
+      />
+    </SwiperSlide>
+  ))}
+</Swiper>
+
         </div>
       </Container>
     </section>

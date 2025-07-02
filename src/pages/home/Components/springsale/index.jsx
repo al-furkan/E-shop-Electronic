@@ -4,20 +4,21 @@ import SpringRight from "./SpringRight";
 
 const SpringSale = () => {
   return (
-    <>
-      <section className="bg-white02 py-16 mt-20">
-        <Container>
-          <div className="flex items-center justify-between">
-            <div className="w-[35%]">
-              <SpringLeft />
-            </div>
-            <div className="w-[55%]">
-              <SpringRight />
-            </div>
+    <section className="bg-white02 py-16 mt-20">
+      <Container>
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+          {/* Left Section */}
+          <div className="w-full lg:w-1/2">
+            <SpringLeft />
           </div>
-        </Container>
-      </section>
-    </>
+
+          {/* Right Section */}
+          <div className="w-full lg:w-1/2">
+            <SpringRight />
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 };
 

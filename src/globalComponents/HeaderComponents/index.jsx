@@ -1,4 +1,5 @@
 import Menubar from "./menubar";
+import MobileNavbar from "./MobileNavbar";
 import Navbar from "./navbar";
 import Topbar from "./topbar";
 
