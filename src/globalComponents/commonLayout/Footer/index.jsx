@@ -15,109 +15,100 @@ const Footer = () => {
   return (
     <Container>
       <footer className="mt-20">
-        <div className="grid grid-cols-[1fr_2fr] gap-x-2 h-full">
-          <div className="flex flex-col justify-between h-full">
-            <Link to="/">
-              <Logo />
-            </Link>
-            <div>
-              <ul>
-                <li className="flex items-center gap-x-2 font-montserrat font-normal text-black01 mb-3">
-                  <FaPhoneAlt color="#828282" />
-                  <span>+1 (555) 123-4567</span>
-                </li>
-                <li className="flex items-center gap-x-2 font-montserrat font-normal text-black01 mb-3">
-                  <BsEnvelopeFill color="#828282" />
-                  <span>information@eshop.com</span>
-                </li>
-                <li className="flex items-center gap-x-2 font-montserrat font-normal text-black01">
-                  <FaMapMarkerAlt color="#828282" />
-                  <span>123 Main Street, Suite 105, Anytown USA</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="grid grid-cols-4 gap-x-2">
-            {footerLinkList.map((item, index) => {
-              const linkLists = item.linkTitle;
-              return (
-                <div key={index}>
-                  <h4 className="font-poppins font-semibold text-xl text-black01">
-                    {t(item.title)}
-                  </h4>
-                  {linkLists.map((data) => {
-                    return (
-                      <div key={data.linkTopic} className=" mt-[24px]">
-                        <ul>
-                          <li className="font-montserrat font-normal text-base text-black200 hover:text-orange transition-all ease-linear duration-75">
-                            <Link to={data.to}>{data.linkTopic}</Link>
-                          </li>
-                        </ul>
-                      </div>
-                    );
-                  })}
-                </div>
-              );
-            })}
-            <div>
-              <div>
-                <h4 className="font-poppins font-semibold text-xl text-black01">
-                  Payments
-                </h4>
-                <div className="flex justify-between items-center gap-x-2 mt-[24px]">
-                  <img src={visa} alt="visa" />
-                  <img src={masterCard} alt="masterCard" />
-                  <img src={applePay} alt="applePay" />
-                  <img src={paypal} alt="paypal" />
-                </div>
-              </div>
-              <div className="mt-[73px]">
-                <h4 className="font-poppins font-semibold text-xl text-black01">
-                  Follow us
-                </h4>
-                <ul className="mt-[24px]">
-                  <li className="font-montserrat font-normal text-base text-black200 hover:text-orange transition-all ease-linear duration-75 mb-3">
-                    <Link to="">Twitter</Link>
-                  </li>
-                  <li className="font-montserrat font-normal text-base text-black200 hover:text-orange transition-all ease-linear duration-75 mb-3">
-                    <Link to="">Instagram</Link>
-                  </li>
-                  <li className="font-montserrat font-normal text-base text-black200 hover:text-orange transition-all ease-linear duration-75">
-                    <Link to="">Facebook</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+  <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-y-10 md:gap-x-8 h-full">
+    {/* Left Section: Logo + Contact */}
+    <div className="flex flex-col justify-between h-full">
+      <Link to="/">
+        <Logo />
+      </Link>
+      <div className="mt-6 md:mt-0">
+        <ul>
+          <li className="flex items-center gap-x-2 font-montserrat text-black01 mb-3">
+            <FaPhoneAlt color="#828282" />
+            <span>+1 (555) 123-4567</span>
+          </li>
+          <li className="flex items-center gap-x-2 font-montserrat text-black01 mb-3">
+            <BsEnvelopeFill color="#828282" />
+            <span>information@eshop.com</span>
+          </li>
+          <li className="flex items-center gap-x-2 font-montserrat text-black01">
+            <FaMapMarkerAlt color="#828282" />
+            <span>123 Main Street, Suite 105, Anytown USA</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Right Section: Links */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-10 gap-x-4">
+      {footerLinkList.map((item, index) => (
+        <div key={index}>
+          <h4 className="font-poppins font-semibold text-xl text-black01">
+            {t(item.title)}
+          </h4>
+          <ul className="mt-6 space-y-3">
+            {item.linkTitle.map((data) => (
+              <li key={data.linkTopic}>
+                <Link
+                  to={data.to}
+                  className="font-montserrat text-base text-black200 hover:text-orange transition-all"
+                >
+                  {data.linkTopic}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="mt-20 border-t border-t-black100 flex justify-between items-center py-2">
-          <span className="font-montserrat font-normal text-sm text-black200">
-            Copyright © 2025 E-Shop. All Rights Reserved.
-          </span>
-          <div className="flex items-center gap-x-3">
-            <Link
-              to=""
-              className="font-montserrat font-normal text-black200 text-sm"
-            >
-              Privacy Policy
-            </Link>
-            <span className="text-black200">|</span>
-            <Link
-              to=""
-              className="font-montserrat font-normal text-black200 text-sm"
-            >
-              Terms & Condition
-            </Link>
-            <span className="text-black200">|</span>
-            <Link
-              to=""
-              className="font-montserrat font-normal text-black200 text-sm"
-            >
-              Sitemap
-            </Link>
-          </div>
+      ))}
+
+      {/* Payments & Social */}
+      <div>
+        <h4 className="font-poppins font-semibold text-xl text-black01">
+          Payments
+        </h4>
+        <div className="flex flex-wrap gap-2 mt-6">
+          <img src={visa} alt="visa" className="h-6" />
+          <img src={masterCard} alt="masterCard" className="h-6" />
+          <img src={applePay} alt="applePay" className="h-6" />
+          <img src={paypal} alt="paypal" className="h-6" />
         </div>
-      </footer>
+
+        <div className="mt-10">
+          <h4 className="font-poppins font-semibold text-xl text-black01">
+            Follow us
+          </h4>
+          <ul className="mt-6 space-y-3">
+            {["Twitter", "Instagram", "Facebook"].map((social) => (
+              <li key={social}>
+                <Link
+                  to=""
+                  className="font-montserrat text-base text-black200 hover:text-orange transition-all"
+                >
+                  {social}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom bar */}
+  <div className="mt-16 border-t border-black100 flex flex-col md:flex-row justify-between items-center py-4 gap-y-3">
+    <span className="font-montserrat text-sm text-black200 text-center md:text-left">
+      © 2025 E-Shop. All Rights Reserved.
+    </span>
+    <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-3 text-sm text-black200">
+      <Link to="" className="hover:text-orange transition">Privacy Policy</Link>
+      <span>|</span>
+      <Link to="" className="hover:text-orange transition">Terms & Condition</Link>
+      <span>|</span>
+      <Link to="" className="hover:text-orange transition">Sitemap</Link>
+    </div>
+  </div>
+</footer>
+
     </Container>
   );
 };

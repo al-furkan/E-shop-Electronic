@@ -12,6 +12,7 @@ import FaqSection from "./Components/FAQ";
 import BestSeller from "./Components/bestseller";
 import TechTalks from "./Components/teachTalks";
 import Companies from "./Components/Companies";
+import Subscribe from "./Components/Subscribe";
 
 const Home = () => {
    const { t } = useTranslation();
@@ -36,6 +37,7 @@ const Home = () => {
       <Container>
         <TechTalks />
         <Companies />
+         <Subscribe />
       </Container>
     </>
   );

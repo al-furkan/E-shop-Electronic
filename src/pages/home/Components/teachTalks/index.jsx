@@ -9,20 +9,20 @@ const TechTalks = () => {
   const { pathname } = useLocation();
   return (
     <>
-      <div className="mt-20">
+      <section className="mt-20">
         <div className="flex  justify-between">
-          <div>
-            <h3 className="font-poppins text-[36px] font-semibold text-black01">
+          <div className="w-[70%] lg:w-fit">
+            <h3 className="font-poppins text-lg md:text-[36px] font-semibold text-black01">
               {t("Tech Talk")}
             </h3>
-            <p className="font-montserrat font-normal text-xl text-black01 mt-4">
+            <p className="font-montserrat font-normal text-sm lg:text-xl text-black01 mt-1 lg:mt-4">
               Stay up to date with the latest trends, reviews, and insights from
               our experts.
             </p>
           </div>
           <Link
             to="/product"
-            className="flex items-center gap-x-2 font-montserrat font-bold text-base text-orange group self-end"
+            className="flex items-center gap-x-2 font-montserrat font-bold text-sm lg:text-base text-orange group self-end"
           >
             {t("View_All")}{" "}
             <span className="group-hover:translate-x-2 transition-transform duration-300">
@@ -30,12 +30,12 @@ const TechTalks = () => {
             </span>
           </Link>
         </div>
-        <div className="grid grid-cols-3 gap-x-10 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-5 lg:gap-x-10 mt-12">
           {TechTalksData.slice(0, 3).map((blog) => (
             <BlogCard pathname={pathname} {...blog} />
           ))}
         </div>
-      </div>
+      </section>
     </>
   );
 };
